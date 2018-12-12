@@ -1,4 +1,4 @@
-package studio.dipdev.flutterarhitecturehelper;
+package studio.dipdev.flutter.arhitecturehelper;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

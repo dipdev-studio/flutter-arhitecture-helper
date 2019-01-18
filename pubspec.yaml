@@ -1,8 +1,8 @@
 name: flutter_arhitecture_helper
-description: A new flutter plugin project.
+description: Flutter arhitecture helper
 version: 0.0.1
-author:
-homepage:
+author: DipDev Studio <info@dipdev.studio>
+homepage: https://git.dipdev.studio/open-source/flutter/arhitecture-helper
 
 environment:
   sdk: ">=2.0.0 <3.0.0"
@@ -10,7 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
 flutter:
-  plugin:
-    androidPackage: studio.dipdev.flutter.arhitecturehelper
-    pluginClass: FlutterArhitectureHelperPlugin

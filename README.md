@@ -1,14 +1,23 @@
 # flutter_arhitecture_helper
 
-A new Flutter package project.
+Architecture helper package
 
-## Getting Started
+Designed for a quick start when developing applications. Allows you to simplify the creation of Clear Architecture and facilitate the basic tasks inherent in most applications.
 
-This project is a starting point for a Dart
-[package](https://flutter.io/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Usage
+To use this package, add `flutter_arhitecture_helper` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```yaml
+dependencies:
+  flutter_arhitecture_helper: '^0.0.1'
+```
+
+### Example
+
+        
+## Installation
+
+### Authors
+```
+This project developed by DipDev Studio Team
+```

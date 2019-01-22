@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/BaseModel.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   bool isLoading = false;

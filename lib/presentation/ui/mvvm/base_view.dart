@@ -20,7 +20,10 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
 
   void navigateTo(BuildContext context, Widget widget, bool clear) {
     if (clear) {
-      MaterialPageRoute(builder: (context) => widget);
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => widget),
+          (Route<dynamic> route) => false);
     } else {
       Navigator.push(
         context,

@@ -13,7 +13,10 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
     init();
   }
 
-  void init();
+  void init() async {
+    model.viewCallbacks.viewCreatedCallback(viewCreated);
+    model.viewCallbacks.viewRefreshCallback(viewRefresh);
+  }
 
   void viewCreated() {}
 

@@ -11,7 +11,7 @@ To use this package, add `flutter_arhitecture_helper` as a [dependency in your p
 
 ```yaml
 dependencies:
-  flutter_arhitecture_helper: '^0.0.1'
+  flutter_arhitecture_helper: '^0.0.3'
 ```
 
 ### Example
@@ -21,5 +21,6 @@ dependencies:
 
 ### Authors
 ```
-This project developed by DipDev Studio Team
+This project developed by DipDev Studio Team:
+@Dimoshka @Tony_Darko @Vladislav_Blago
 ```

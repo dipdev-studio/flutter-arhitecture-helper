@@ -5,20 +5,24 @@ import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view_model.
 
 abstract class BaseScreen<M extends BaseModel, V extends BaseView<M>,
     VM extends BaseViewModel<M, V>> extends StatefulWidget {
-  /* M get model => ;
-  VM get viewModel => _viewModel;
-  V get view => _view; */
+  final M model;
+
+  const BaseScreen(this.model, {Key key}) : super(key: key);
+
+  BaseViewModel get viewModel => model.viewModel;
+  BaseView get view => model.view;
 
   @override
   V createState() {
-    M _model = initModel();
-    V _view = initView(_model);
-    VM _viewModel = initViewModel(_view);
+    V view = initView(model);
+    VM viewModel = initViewModel(view);
 
-    return _viewModel.view;
+    model.view = view as BaseView;
+    model.viewModel = viewModel as BaseViewModel;
+
+    return viewModel.view;
   }
 
-  M initModel();
   V initView(M model);
   VM initViewModel(V view);
 }

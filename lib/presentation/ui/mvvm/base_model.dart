@@ -1,4 +1,10 @@
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view_model.dart';
+
 class BaseModel {
+  BaseViewModel viewModel;
+  BaseView view;
+
   ViewCallbacks viewCallbacks = ViewCallbacks();
 }
 
@@ -17,7 +23,7 @@ class OnCallCommand {
     callbacks.clear();
   }
 
-  void onCallObject<T>(T value) {
+  void onCallWithValue<T>(T value) {
     callbacks.forEach((fun) => fun(value));
   }
 

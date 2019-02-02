@@ -39,6 +39,7 @@ class ViewCallbacks {
   void viewCreatedAction() {
     if (_viewCreated != null) {
       _viewCreated();
+      _viewCreated = null;
     }
   }
 

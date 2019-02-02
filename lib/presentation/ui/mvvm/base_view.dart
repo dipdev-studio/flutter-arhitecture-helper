@@ -12,11 +12,16 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     var view = getView().build(context);
-    if (model != null) model.viewCallbacks.viewCreatedAction();
     return view;
   }
 
   BaseView<M> getView();
+
+  @override
+  void initState() {
+    super.initState();
+    if (model != null) model.viewCallbacks.viewCreatedAction();
+  }
 
   void navigateTo(BuildContext context, Widget widget, bool clear) {
     if (clear) {

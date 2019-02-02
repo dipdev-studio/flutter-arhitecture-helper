@@ -7,20 +7,20 @@ Designed for a quick start when developing applications. Allows you to simplify 
 This package helps not only to organize your code qualitatively, but also includes methods that facilitate a lot of tasks.
 
 ## Usage
+
 To use this package, add `flutter_arhitecture_helper` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 ```yaml
 dependencies:
-  flutter_arhitecture_helper: '^0.3.0'
+  flutter_arhitecture_helper: '^0.3.1'
 ```
 
 ### Example
 
-        
 ## Installation
 
 ### Authors
-```
-This project developed by DipDev Studio Team:
+
+```This project developed by DipDev Studio Team:
 @Dimoshka @Tony_Darko @Vladislav_Blago @Aldzhamal
 ```

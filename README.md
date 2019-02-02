@@ -12,7 +12,7 @@ To use this package, add `flutter_arhitecture_helper` as a [dependency in your p
 
 ```yaml
 dependencies:
-  flutter_arhitecture_helper: '^0.3.2'
+  flutter_arhitecture_helper: '^0.3.3'
 ```
 
 ### Example

@@ -1,6 +1,6 @@
 # File with heading
 
-## [0.3.2] - 02.02.2019
+## [0.3.3] - 02.02.2019
 
 * Fix view created action.
 

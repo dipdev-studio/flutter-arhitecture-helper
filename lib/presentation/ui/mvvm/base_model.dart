@@ -35,6 +35,7 @@ class OnCallCommand {
 class ViewCallbacks {
   Function _viewCreated;
   Function _viewRefresh;
+  Function _viewInitState;
 
   void viewCreatedAction() {
     if (_viewCreated != null) {
@@ -49,11 +50,21 @@ class ViewCallbacks {
     }
   }
 
+  void viewInitStateAction() {
+    if (_viewRefresh != null) {
+      _viewInitState();
+    }
+  }
+
   void viewCreatedCallback(Function() fun) {
     _viewCreated = fun;
   }
 
   void viewRefreshCallback(Function() fun) {
     _viewRefresh = fun;
+  }
+
+  void viewInitStateCallback(Function() fun) {
+    _viewInitState = fun;
   }
 }

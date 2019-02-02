@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_arhitecture_helper: ^0.0.2
+  flutter_arhitecture_helper:
+    path: ../
   cupertino_icons: ^0.1.2
   url_launcher: ^4.2.0+1
 

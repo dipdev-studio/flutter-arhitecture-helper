@@ -20,7 +20,8 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   @override
   void initState() {
     super.initState();
-    if (model != null) model.viewCallbacks.viewCreatedAction();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => model?.viewCallbacks?.viewCreatedAction());
   }
 
   void navigateTo(BuildContext context, Widget widget, bool clear) {

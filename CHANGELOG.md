@@ -1,5 +1,9 @@
 # File with heading
 
+## [0.3.4] - 11.02.2019
+
+* Fix package to use with stateful and stateless widgets.
+
 ## [0.3.3] - 02.02.2019
 
 * Fix view created action.

@@ -1,11 +1,5 @@
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view_model.dart';
-
-class BaseModel {
-  BaseViewModel viewModel;
-  BaseView view;
-
-  ViewCallbacks viewCallbacks = ViewCallbacks();
+class BaseModelUtils{
+   ViewCallbacks viewCallbacks = ViewCallbacks();
 }
 
 class OnCallCommand {

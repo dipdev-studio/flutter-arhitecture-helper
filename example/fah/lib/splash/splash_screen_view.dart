@@ -1,7 +1,7 @@
-import 'package:example/splash/splash_screen_model.dart';
+import 'package:fah/splash/splash_screen_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/base_view.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_view.dart';
 
 class SplashScreenView extends BaseView<SplashScreenModel> {
   SplashScreenView(SplashScreenModel model) : super(model);

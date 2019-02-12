@@ -41,5 +41,15 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
         (_) => model?.viewCallbacks?.viewInitStateAction());
   }
 
+  void updateUI([VoidCallback callback]) {
+    if (mounted) {
+      if (callback != null) {
+        setState(callback);
+      } else {
+        setState(() {});
+      }
+    }
+  }
+
   BaseView<M> getView();
 }

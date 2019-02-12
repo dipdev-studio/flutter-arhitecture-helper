@@ -1,8 +1,20 @@
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_model.dart';
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_view.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_view_model_utils.dart';
 
-abstract class BaseViewModel<M extends BaseModel,
-    V extends BaseView<M>> extends BaseViewModelUtils<M, V> {
-  BaseViewModel(V _view) : super(_view);
+abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
+  V _view;
+  M _model;
+
+  V get view => _view;
+  M get model => _model;
+
+  BaseViewModel(this._view) {
+    _model = _view.model;
+  }
+
+  void init() async {
+    model.viewCallbacks.viewCreatedCallback(viewCreated);
+  }
+
+  void viewCreated() {}
 }

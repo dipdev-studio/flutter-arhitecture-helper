@@ -1,20 +1,34 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_model.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_view_utils.dart';
 
-abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
-    with BaseViewUtils<M> {
-  BaseView(M _model) {
-    init(_model, this.context);
+abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
+  final M _model;
+  M get model => _model;
+
+  BaseView(this._model);
+
+  Future<T> navigateTo<T extends Object>(Widget widget, bool clear) {
+    if (clear) {
+      return Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => widget),
+          (Route<dynamic> route) => false);
+    } else {
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => widget),
+      );
+    }
   }
 
-
-
-  
+  bool navigateBack<T extends Object>([T result]) {
+    return Navigator.pop(context, result);
+  }
 
   @override
   Widget build(BuildContext context) {
-    setContext(context);
     var view = getView().build(context);
     model?.viewCallbacks?.viewCreatedAction();
     return view;

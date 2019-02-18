@@ -5,7 +5,7 @@ author: DipDev Studio <info@dipdev.studio>
 homepage: https://git.dipdev.studio/open-source/flutter/arhitecture-helper
 
 environment:
-  sdk: ">=1.0.0 <3.0.0"
+  sdk: ">=1.19.0 <3.0.0"
 
 dependencies:
   flutter:

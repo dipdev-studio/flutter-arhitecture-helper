@@ -29,7 +29,8 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var view = getView().build(context);
+    var view = getView(context);
+    model?.context = context;
     model?.viewCallbacks?.viewCreatedAction();
     return view;
   }
@@ -51,5 +52,5 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
     }
   }
 
-  BaseView<M> getView();
+  Widget getView(BuildContext context);
 }

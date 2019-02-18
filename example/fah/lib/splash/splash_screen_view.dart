@@ -7,12 +7,7 @@ class SplashScreenView extends BaseView<SplashScreenModel> {
   SplashScreenView(SplashScreenModel model) : super(model);
 
   @override
-  BaseView<SplashScreenModel> getView() {
-    return this;
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget getView(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
@@ -31,29 +26,27 @@ class SplashScreenView extends BaseView<SplashScreenModel> {
             Center(
               child: GestureDetector(
                 onTap: () {
-              model.click.onCall();
+                  model.click.onCall();
                 },
                 child: Container(
-                  margin: EdgeInsets.all(100),
-                  height: 100,
-                  width: 200,
-                 alignment: Alignment(0, 0),
-                 // margin: EdgeInsets.all(200),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.white,
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 5.0,
-                      )
-                    ],
-                  ),
-                 child: Text(
-                    "Dip Dev Studio",
-
-                  )
-                ),
+                    margin: EdgeInsets.all(100),
+                    height: 100,
+                    width: 200,
+                    alignment: Alignment(0, 0),
+                    // margin: EdgeInsets.all(200),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      color: Colors.white,
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 5.0,
+                        )
+                      ],
+                    ),
+                    child: Text(
+                      "Dip Dev Studio",
+                    )),
               ),
             ),
           ],

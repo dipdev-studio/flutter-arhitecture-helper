@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends StatelessWidget {
-  BuildContext context;
-
   final M _model;
   M get model => _model;
 
@@ -14,28 +12,28 @@ abstract class BaseView<M extends BaseModel> extends StatelessWidget {
   Future<T> navigateTo<T extends Object>(Widget widget, bool clear) {
     if (clear) {
       return Navigator.pushAndRemoveUntil(
-          context,
+          model?.context,
           MaterialPageRoute(builder: (context) => widget),
           (Route<dynamic> route) => false);
     } else {
       return Navigator.push(
-        context,
+        model?.context,
         MaterialPageRoute(builder: (context) => widget),
       );
     }
   }
 
   bool navigateBack<T extends Object>([T result]) {
-    return Navigator.pop(context, result);
+    return Navigator.pop(model?.context, result);
   }
 
   @override
   Widget build(BuildContext context) {
-    context = context;
-    var view = getView().build(context);
+    var view = getView(context);
+    model?.context = context;
     model?.viewCallbacks?.viewCreatedAction();
     return view;
   }
 
-  BaseView<M> getView();
+  Widget getView(BuildContext context);
 }

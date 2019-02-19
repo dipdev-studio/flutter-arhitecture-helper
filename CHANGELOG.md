@@ -1,5 +1,9 @@
 # File with heading
 
+## [0.3.6] - 18.02.2019
+
+* Fix navigation.
+
 ## [0.3.5] - 18.02.2019
 
 * Refactoring.

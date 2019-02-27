@@ -4,12 +4,14 @@ import 'package:flutter/widgets.dart';
 
 import 'base_model.dart';
 
-abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
+abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
+    with AutomaticKeepAliveClientMixin {
   final M _model;
+  final bool keepAlive;
 
   M get model => _model;
 
-  BaseView(this._model);
+  BaseView(this._model, {this.keepAlive = false});
 
   Future<T> navigateTo<T extends Object>(
       BuildContext context, Widget widget, bool clear) {
@@ -61,4 +63,7 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
     model.viewCallbacks.viewDisposedAction();
     super.dispose();
   }
+
+  @override
+  bool get wantKeepAlive => keepAlive;
 }

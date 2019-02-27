@@ -1,7 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_model.dart';
+import 'package:flutter/widgets.dart';
+
+import 'base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   final M _model;

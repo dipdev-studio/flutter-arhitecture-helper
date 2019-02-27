@@ -30,6 +30,7 @@ class ViewCallbacks {
   Function _viewCreated;
   Function _viewRefresh;
   Function _viewInitState;
+  Function _viewDisposed;
 
   void viewCreatedAction() {
     if (_viewCreated != null) {
@@ -38,15 +39,21 @@ class ViewCallbacks {
     }
   }
 
-  void viewRefreshdAction() {
+  void viewRefreshedAction() {
     if (_viewRefresh != null) {
       _viewRefresh();
     }
   }
 
   void viewInitStateAction() {
-    if (_viewRefresh != null) {
+    if (_viewInitState != null) {
       _viewInitState();
+    }
+  }
+
+  void viewDisposedAction() {
+    if (_viewDisposed != null) {
+      _viewDisposed();
     }
   }
 
@@ -60,5 +67,9 @@ class ViewCallbacks {
 
   void viewInitStateCallback(Function() fun) {
     _viewInitState = fun;
+  }
+
+  void viewDisposedCallback(Function() fun) {
+    _viewDisposed = fun;
   }
 }

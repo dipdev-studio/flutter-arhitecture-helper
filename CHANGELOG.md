@@ -1,6 +1,6 @@
 # File with heading
 
-## [0.3.6] - 18.02.2019
+## [0.3.6] - 27.02.2019
 
 * Fix navigation.
 

@@ -17,6 +17,7 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
     model.viewCallbacks.viewCreatedCallback(viewCreated);
     model.viewCallbacks.viewRefreshCallback(viewRefresh);
     model.viewCallbacks.viewInitStateCallback(initState);
+    model.viewCallbacks.viewDisposedCallback(viewDisposed);
   }
 
   void viewCreated() {}
@@ -24,4 +25,6 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
   void viewRefresh() {}
 
   void initState() {}
+
+  void viewDisposed() {}
 }

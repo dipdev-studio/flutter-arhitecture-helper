@@ -5,6 +5,7 @@ import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_mo
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   final M _model;
+
   M get model => _model;
 
   BaseView(this._model);
@@ -53,4 +54,10 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
   }
 
   Widget getView(BuildContext context);
+
+  @override
+  void dispose() {
+    model.viewCallbacks.viewDisposedAction();
+    super.dispose();
+  }
 }

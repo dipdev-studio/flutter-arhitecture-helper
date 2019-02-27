@@ -26,4 +26,16 @@ class SplashScreenViewModel
       throw 'Could not launch $url';
     }
   }
+
+  @override
+  void viewCreated() {}
+
+  @override
+  void viewRefresh() {}
+
+  @override
+  void initState() {}
+
+  @override
+  void viewDisposed() {}
 }

@@ -1,5 +1,6 @@
-import 'package:fah/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'splash/splash_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,5 +15,4 @@ class MyApp extends StatelessWidget {
       home: new SplashScreen(),
     );
   }
-
 }

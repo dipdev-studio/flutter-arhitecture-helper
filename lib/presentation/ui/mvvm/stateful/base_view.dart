@@ -1,14 +1,17 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_model.dart';
+import 'package:flutter/widgets.dart';
 
-abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
+import 'base_model.dart';
+
+abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
+    with AutomaticKeepAliveClientMixin {
   final M _model;
+  final bool keepAlive;
 
   M get model => _model;
 
-  BaseView(this._model);
+  BaseView(this._model, {this.keepAlive = false});
 
   Future<T> navigateTo<T extends Object>(
       BuildContext context, Widget widget, bool clear) {
@@ -60,4 +63,7 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget> {
     model.viewCallbacks.viewDisposedAction();
     super.dispose();
   }
+
+  @override
+  bool get wantKeepAlive => keepAlive;
 }

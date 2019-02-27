@@ -1,5 +1,6 @@
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_model.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_view.dart';
+
+import 'base_model.dart';
+import 'base_view.dart';
 
 abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
   V _view;

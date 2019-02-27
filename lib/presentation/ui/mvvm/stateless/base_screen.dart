@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_model.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_view.dart';
-import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_view_model.dart';
+
+import 'base_model.dart';
+import 'base_view.dart';
+import 'base_view_model.dart';
 
 abstract class BaseScreen<M extends BaseModel, V extends BaseView<M>,
     VM extends BaseViewModel<M, V>> extends StatelessWidget {
@@ -18,8 +18,8 @@ abstract class BaseScreen<M extends BaseModel, V extends BaseView<M>,
     V view = initView(model);
     VM viewModel = initViewModel(view);
 
-    model.view = view;
-    model.viewModel = viewModel;
+    model.view = view as BaseView;
+    model.viewModel = viewModel as BaseViewModel;
 
     return viewModel.view;
   }

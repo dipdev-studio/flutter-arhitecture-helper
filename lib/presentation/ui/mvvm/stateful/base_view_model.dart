@@ -1,4 +1,3 @@
-
 import 'base_model.dart';
 import 'base_view.dart';
 

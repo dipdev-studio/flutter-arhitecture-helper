@@ -1,5 +1,5 @@
-class BaseModelUtils{
-   ViewCallbacks viewCallbacks = ViewCallbacks();
+class BaseModelUtils {
+  ViewCallbacks viewCallbacks = ViewCallbacks();
 }
 
 class OnCallCommand {

@@ -1,7 +1,9 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../widgets/loading_widget.dart';
 import 'base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
@@ -34,9 +36,12 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
 
   @override
   Widget build(BuildContext context) {
-    var view = getView(context);
+    Widget widget = Directionality(
+        textDirection: TextDirection.ltr,
+        child: new Stack(
+            children: <Widget>[getView(context), getLoadingWidget()]));
     model?.viewCallbacks?.viewCreatedAction();
-    return view;
+    return widget;
   }
 
   @override
@@ -66,4 +71,8 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
 
   @override
   bool get wantKeepAlive => keepAlive;
+
+  Widget getLoadingWidget() {
+    return new LoadingWidget(showing: model.loading);
+  }
 }

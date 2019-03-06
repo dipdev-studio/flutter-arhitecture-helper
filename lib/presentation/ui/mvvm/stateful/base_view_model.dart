@@ -18,6 +18,8 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
     model.viewCallbacks.viewRefreshCallback(viewRefresh);
     model.viewCallbacks.viewInitStateCallback(initState);
     model.viewCallbacks.viewDisposedCallback(viewDisposed);
+    model.loadingShow.addCallback(loadingShow);
+    model.loadingHide.addCallback(loadingHide);
   }
 
   void viewCreated() {}
@@ -27,4 +29,14 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>> {
   void initState() {}
 
   void viewDisposed() {}
+
+  void loadingShow() {
+    model.loading = true;
+    view.updateUI();
+  }
+
+  void loadingHide() {
+    model.loading = false;
+    view.updateUI();
+  }
 }

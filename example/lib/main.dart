@@ -8,7 +8,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseApp().getApp(
+    return BaseApp.getApp(
         'DipDev Studio',
         ThemeData(
           primarySwatch: Colors.blue,

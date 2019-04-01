@@ -59,5 +59,5 @@ void viewDisposed() {}
 ### Authors
 
 ```
-This project developed by DipDev Studio Team:
-@Dimoshka```
+This project developed by DipDev Studio Team: @Dimoshka
+```

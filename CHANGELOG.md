@@ -1,7 +1,8 @@
 # File with heading
 
-## [0.3.7] - 06.03.2019
+## [0.3.7] - 01.04.2019
 
+* Implement Base App
 * Implement loading widget
 
 ## [0.3.6] - 27.02.2019

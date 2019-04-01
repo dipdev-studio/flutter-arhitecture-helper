@@ -1,5 +1,9 @@
+import 'package:flutter/widgets.dart';
+
 class BaseModelUtils {
   ViewCallbacks viewCallbacks = ViewCallbacks();
+
+  BuildContext context;
 }
 
 class OnCallCommand {

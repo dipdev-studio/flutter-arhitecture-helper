@@ -1,38 +1,18 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_view_utils.dart';
 
 import '../../widgets/loading_widget.dart';
 import 'base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
-    with AutomaticKeepAliveClientMixin {
+    with AutomaticKeepAliveClientMixin, BaseViewUtils {
   final M _model;
   final bool keepAlive;
 
   M get model => _model;
 
   BaseView(this._model, {this.keepAlive = false});
-
-  Future<T> navigateTo<T extends Object>(
-      BuildContext context, Widget widget, bool clear) {
-    if (clear) {
-      return Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => widget),
-          (Route<dynamic> route) => false);
-    } else {
-      return Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => widget),
-      );
-    }
-  }
-
-  bool navigateBack<T extends Object>(BuildContext context, [T result]) {
-    return Navigator.pop(context, result);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +21,7 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
         child: new Stack(
             children: <Widget>[getView(context), getLoadingWidget()]));
     model?.viewCallbacks?.viewCreatedAction();
+    model?.context = context;
     return widget;
   }
 

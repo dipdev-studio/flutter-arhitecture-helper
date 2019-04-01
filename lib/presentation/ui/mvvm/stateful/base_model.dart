@@ -5,6 +5,7 @@ import 'base_view_model.dart';
 class BaseModel extends BaseModelUtils {
   BaseViewModel viewModel;
   BaseView view;
+
   bool loading = false;
 
   OnCallCommand loadingShow = new OnCallCommand();

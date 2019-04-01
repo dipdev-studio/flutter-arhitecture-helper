@@ -15,12 +15,49 @@ dependencies:
   flutter_arhitecture_helper: ^0.3.7
 ```
 
+
 ### Example
 
-## Installation
+#### Navigate in View Model
+
+```dart
+view.navigateTo(model.context, new MainScreen(), true);
+```
+
+```dart
+view.navigateBack(model.context);
+```
+
+#### Refresh UI from View Model
+
+```dart
+view.updateUI();
+```
+
+#### Events in View Model
+
+```dart
+@override
+void init() {
+  super.init();
+}
+
+@override
+void viewCreated() {}
+
+@override
+void viewRefresh() {}
+
+@override
+void initState() {}
+
+@override
+void viewDisposed() {}
+```
+
 
 ### Authors
 
-```This project developed by DipDev Studio Team:
-@Dimoshka @Tony_Darko @Vladislav_Blago @Aldzhamal
 ```
+This project developed by DipDev Studio Team:
+@Dimoshka```

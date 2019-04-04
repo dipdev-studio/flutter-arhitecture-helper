@@ -8,11 +8,11 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseApp.getApp(
-        'DipDev Studio',
-        ThemeData(
+    return BaseApp.MaterialApp(
+        title: 'DipDev Studio',
+        theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        new SplashScreen());
+        home: new SplashScreen());
   }
 }

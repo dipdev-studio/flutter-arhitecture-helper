@@ -7,20 +7,20 @@ import 'package:flutter/widgets.dart';
 class BaseViewUtils {
   Future<T> navigateTo<T extends Object>(
       BuildContext context, Widget widget, bool clear,
-      [bool material = true]) {
+      {bool material = true}) {
     if (clear) {
       return Navigator.pushAndRemoveUntil(context,
-          getPageRoute(widget, material), (Route<dynamic> route) => false);
+          getPageRoute(widget, material: material), (Route<dynamic> route) => false);
     } else {
       return Navigator.push(
         context,
-        getPageRoute(widget, material),
+        getPageRoute(widget, material: material),
       );
     }
   }
 
   Route<T> getPageRoute<T extends Object>(Widget widget,
-      [bool material = true]) {
+      {bool material = true}) {
     if (material) {
       return MaterialPageRoute(builder: (BuildContext context) => widget);
     } else {

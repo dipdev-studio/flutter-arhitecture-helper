@@ -9,8 +9,10 @@ class BaseViewUtils {
       BuildContext context, Widget widget, bool clear,
       {bool material = true}) {
     if (clear) {
-      return Navigator.pushAndRemoveUntil(context,
-          getPageRoute(widget, material: material), (Route<dynamic> route) => false);
+      return Navigator.pushAndRemoveUntil(
+          context,
+          getPageRoute(widget, material: material),
+          (Route<dynamic> route) => false);
     } else {
       return Navigator.push(
         context,

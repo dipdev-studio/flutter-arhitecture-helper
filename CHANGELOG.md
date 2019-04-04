@@ -1,5 +1,9 @@
 # File with heading
 
+## [0.3.8] - 04.04.2019
+
+* Added Base App parameters
+
 ## [0.3.7] - 01.04.2019
 
 * Implement Base App

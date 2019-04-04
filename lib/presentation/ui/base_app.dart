@@ -1,21 +1,123 @@
 import 'package:flutter/material.dart';
 
-class BaseApp {
-  static Widget getApp(String title, ThemeData theme, Widget home,
-      {bool material = true, List<NavigatorObserver> navigatorObservers}) {
-    if (material) {
-      return MaterialApp(
-          title: title,
-          theme: theme,
-          home: home,
-          debugShowCheckedModeBanner: false,
-          navigatorObservers: navigatorObservers = []);
-    } else {
-      return WidgetsApp(
+class BaseApp extends StatelessWidget {
+  Widget appWidget;
+
+  BaseApp.MaterialApp({
+    Key key,
+    GlobalKey<NavigatorState> navigatorKey,
+    Widget home,
+    Map<String, WidgetBuilder> routes,
+    String initialRoute,
+    RouteFactory onGenerateRoute,
+    RouteFactory onUnknownRoute,
+    List<NavigatorObserver> navigatorObservers,
+    TransitionBuilder builder,
+    String title,
+    GenerateAppTitle onGenerateTitle,
+    Color color,
+    ThemeData theme,
+    ThemeData darkTheme,
+    Locale locale,
+    Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates,
+    LocaleListResolutionCallback localeListResolutionCallback,
+    LocaleResolutionCallback localeResolutionCallback,
+    Iterable<Locale> supportedLocales,
+    bool debugShowMaterialGrid,
+    bool showPerformanceOverlay,
+    bool checkerboardRasterCacheImages,
+    bool checkerboardOffscreenLayers,
+    bool showSemanticsDebugger,
+    bool debugShowCheckedModeBanner,
+  }) {
+    appWidget = MaterialApp(
+        key: key,
+        navigatorKey: navigatorKey,
         home: home,
-        color: theme.primaryColor,
+        routes: routes,
+        initialRoute: initialRoute,
+        onGenerateRoute: onGenerateRoute,
+        onUnknownRoute: onUnknownRoute,
+        navigatorObservers: navigatorObservers,
+        builder: builder,
         title: title,
-      );
-    }
+        onGenerateTitle: onGenerateTitle,
+        color: color,
+        theme: theme,
+        darkTheme: darkTheme,
+        locale: locale,
+        localizationsDelegates: localizationsDelegates,
+        localeListResolutionCallback: localeListResolutionCallback,
+        localeResolutionCallback: localeResolutionCallback,
+        supportedLocales: supportedLocales,
+        debugShowMaterialGrid: debugShowMaterialGrid,
+        showPerformanceOverlay: showPerformanceOverlay,
+        checkerboardRasterCacheImages: checkerboardRasterCacheImages,
+        checkerboardOffscreenLayers: checkerboardOffscreenLayers,
+        showSemanticsDebugger: showSemanticsDebugger,
+        debugShowCheckedModeBanner: debugShowCheckedModeBanner);
+  }
+
+  BaseApp.WidgetsApp({
+    Key key,
+    GlobalKey<NavigatorState> navigatorKey,
+    RouteFactory onGenerateRoute,
+    RouteFactory onUnknownRoute,
+    List<NavigatorObserver> navigatorObservers,
+    String initialRoute,
+    PageRouteFactory pageRouteBuilder,
+    Widget home,
+    Map<String, WidgetBuilder> routes,
+    TransitionBuilder builder,
+    String title,
+    GenerateAppTitle onGenerateTitle,
+    TextStyle textStyle,
+    @required Color color,
+    Locale locale,
+    Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates,
+    LocaleListResolutionCallback localeListResolutionCallback,
+    LocaleResolutionCallback localeResolutionCallback,
+    Iterable<Locale> supportedLocales,
+    bool showPerformanceOverlay,
+    bool checkerboardRasterCacheImages,
+    bool checkerboardOffscreenLayers,
+    bool showSemanticsDebugger,
+    bool debugShowWidgetInspector,
+    bool debugShowCheckedModeBanner,
+    InspectorSelectButtonBuilder inspectorSelectButtonBuilder,
+  }) {
+    appWidget = WidgetsApp(
+      key: key,
+      navigatorKey: navigatorKey,
+      onGenerateRoute: onGenerateRoute,
+      onUnknownRoute: onUnknownRoute,
+      navigatorObservers: navigatorObservers,
+      initialRoute: initialRoute,
+      //pageRouteBuilder: pageRouteBuilder,
+      home: home,
+      routes: routes,
+      builder: builder,
+      title: title,
+      onGenerateTitle: onGenerateTitle,
+      textStyle: textStyle,
+      color: color,
+      locale: locale,
+      localizationsDelegates: localizationsDelegates,
+      localeListResolutionCallback: localeListResolutionCallback,
+      localeResolutionCallback: localeResolutionCallback,
+      supportedLocales: supportedLocales,
+      showPerformanceOverlay: showPerformanceOverlay,
+      checkerboardRasterCacheImages: checkerboardRasterCacheImages,
+      checkerboardOffscreenLayers: checkerboardOffscreenLayers,
+      showSemanticsDebugger: showSemanticsDebugger,
+      debugShowWidgetInspector: debugShowWidgetInspector,
+      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+      inspectorSelectButtonBuilder: inspectorSelectButtonBuilder,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return appWidget;
   }
 }

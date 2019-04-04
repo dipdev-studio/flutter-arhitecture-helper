@@ -19,8 +19,8 @@ abstract class BaseScreen<M extends BaseModel, V extends BaseView<M>,
     V view = initView(model);
     VM viewModel = initViewModel(view);
 
-    model.view = view as BaseView;
-    model.viewModel = viewModel as BaseViewModel;
+    model.view = view;
+    model.viewModel = viewModel;
 
     return viewModel.view;
   }

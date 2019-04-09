@@ -1,5 +1,9 @@
 # File with heading
 
+## [0.4.0] - 09.04.2019
+
+* Implement BaseApp as MVVM
+
 ## [0.3.8, 0.3.9] - 04.04.2019
 
 * Added Base App parameters

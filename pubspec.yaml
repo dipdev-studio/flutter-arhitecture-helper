@@ -2,7 +2,12 @@ name: flutter_arhitecture_helper
 description: Flutter arhitecture helper - create quality applications is just
 version: 0.4.0
 author: DipDev Studio <info@dipdev.studio>
+authors:
+- DipDev Studio <info@dipdev.studio>
+- Dmytro Prylutskyi <dmytro.prylutskyi@gmail.com>
 homepage: https://git.dipdev.studio/open-source/flutter/arhitecture-helper
+repository: https://github.com/dipdev-studio/flutter-arhitecture-helper
+issue_tracker: https://github.com/dipdev-studio/flutter-arhitecture-helper/issues
 
 environment:
   sdk: ">=1.19.0 <3.0.0"

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+/// The class responsible for creating the application.
 class BaseAppConfig {
   bool isMaterial;
   Key key;

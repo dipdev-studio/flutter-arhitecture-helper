@@ -33,11 +33,11 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
         (_) => model?.viewCallbacks?.viewInitStateAction());
     SystemChannels.lifecycle.setMessageHandler((msg) {
       if (msg == AppLifecycleState.resumed.toString()) {
-       model?.viewCallbacks?.viewResumedAction();
+        model?.viewCallbacks?.viewResumedAction();
       } else if (msg == AppLifecycleState.inactive.toString()) {
         model?.viewCallbacks?.viewInactiveAction();
       } else if (msg == AppLifecycleState.paused.toString()) {
-         model?.viewCallbacks?.viewPausedAction();
+        model?.viewCallbacks?.viewPausedAction();
       } else if (msg == AppLifecycleState.suspending.toString()) {
         model?.viewCallbacks?.viewSuspendingAction();
       }
@@ -54,6 +54,7 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
     }
   }
 
+  /// This method needs to be implemented to provide the Widget for display.
   Widget getView(BuildContext context);
 
   @override

@@ -6,7 +6,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_model_utils.dart';
 
 class BaseViewUtils<M extends BaseModelUtils> {
-
   Future<T> navigateTo<T extends Object>(
       BuildContext context, Widget widget, bool clear,
       {bool material = true}) {

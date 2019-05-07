@@ -1,6 +1,6 @@
-# flutter_arhitecture_helper_example
+# example
 
-Demonstrates how to use the flutter_arhitecture_helper plugin.
+A new Flutter project.
 
 ## Getting Started
 

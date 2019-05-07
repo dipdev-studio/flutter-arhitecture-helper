@@ -6,7 +6,7 @@ import 'base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends StatelessWidget
     with BaseViewUtils {
-  final M _model;
+  M _model;
   M get model => _model;
 
   BaseView(this._model);

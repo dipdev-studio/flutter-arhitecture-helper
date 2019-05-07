@@ -1,8 +1,9 @@
 # File with heading
 
-## [0.4.0] - 09.04.2019
+## [0.4.0] - 07.05.2019
 
 * Implement BaseApp as MVVM
+* Added View Events (paused, suspending, resumed etc)
 
 ## [0.3.8, 0.3.9] - 04.04.2019
 

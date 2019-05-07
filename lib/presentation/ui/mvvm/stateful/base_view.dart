@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_view_utils.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/widgets/loading_widget.dart';
 
-import '../../widgets/loading_widget.dart';
 import 'base_model.dart';
 
 abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
     with AutomaticKeepAliveClientMixin, BaseViewUtils {
-  final M _model;
   final bool keepAlive;
 
+  M _model;
   M get model => _model;
 
   BaseView(this._model, {this.keepAlive = false});
@@ -30,6 +31,17 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
         (_) => model?.viewCallbacks?.viewInitStateAction());
+    SystemChannels.lifecycle.setMessageHandler((msg) {
+      if (msg == AppLifecycleState.resumed.toString()) {
+       model?.viewCallbacks?.viewResumedAction();
+      } else if (msg == AppLifecycleState.inactive.toString()) {
+        model?.viewCallbacks?.viewInactiveAction();
+      } else if (msg == AppLifecycleState.paused.toString()) {
+         model?.viewCallbacks?.viewPausedAction();
+      } else if (msg == AppLifecycleState.suspending.toString()) {
+        model?.viewCallbacks?.viewSuspendingAction();
+      }
+    });
   }
 
   void updateUI([VoidCallback callback]) {

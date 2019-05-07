@@ -69,49 +69,36 @@ class BaseAppConfig {
         assert(checkerboardRasterCacheImages != null),
         assert(checkerboardOffscreenLayers != null),
         assert(showSemanticsDebugger != null),
-        assert(debugShowCheckedModeBanner != null),
-        assert(
-            home == null || !routes.containsKey(Navigator.defaultRouteName),
-            'If the home property is specified, the routes table '
-            'cannot include an entry for "/", since it would be redundant.'),
-        assert(
-            builder != null ||
-                home != null ||
-                routes.containsKey(Navigator.defaultRouteName) ||
-                onGenerateRoute != null ||
-                onUnknownRoute != null,
-            'Either the home property must be specified, '
-            'or the routes table must include an entry for "/", '
-            'or there must be on onGenerateRoute callback specified, '
-            'or there must be an onUnknownRoute callback specified, '
-            'or the builder property must be specified, '
-            'because otherwise there is nothing to fall back on if the '
-            'app is started with an intent that specifies an unknown route.'),
-        assert(
-            (home != null ||
-                    routes.isNotEmpty ||
-                    onGenerateRoute != null ||
-                    onUnknownRoute != null) ||
-                (builder != null &&
-                    navigatorKey == null &&
-                    initialRoute == null &&
-                    navigatorObservers.isEmpty),
-            'If no route is provided using '
-            'home, routes, onGenerateRoute, or onUnknownRoute, '
-            'a non-null callback for the builder property must be provided, '
-            'and the other navigator-related properties, '
-            'navigatorKey, initialRoute, and navigatorObservers, '
-            'must have their initial values '
-            '(null, null, and the empty list, respectively).'),
-        assert(
-            builder != null ||
-                onGenerateRoute != null ||
-                pageRouteBuilder != null,
-            'If neither builder nor onGenerateRoute are provided, the '
-            'pageRouteBuilder must be specified so that the default handler '
-            'will know what kind of PageRoute transition to build.'),
-        assert(title != null),
-        assert(color != null),
-        assert(supportedLocales != null && supportedLocales.isNotEmpty),
-        assert(debugShowWidgetInspector != null);
+        assert(debugShowCheckedModeBanner != null) {
+    this.isMaterial = isMaterial;
+    this.key = key;
+    this.navigatorKey = navigatorKey;
+    this.onGenerateRoute = onGenerateRoute;
+    this.onUnknownRoute = onUnknownRoute;
+    this.navigatorObservers = navigatorObservers;
+    this.initialRoute = initialRoute;
+    this.pageRouteBuilder = pageRouteBuilder;
+    this.home = home;
+    this.routes = routes;
+    this.builder = builder;
+    this.title = title;
+    this.onGenerateTitle = onGenerateTitle;
+    this.textStyle = textStyle;
+    this.color = color;
+    this.theme = theme;
+    this.darkTheme = darkTheme;
+    this.locale = locale;
+    this.localizationsDelegates = localizationsDelegates;
+    this.localeListResolutionCallback = localeListResolutionCallback;
+    this.localeResolutionCallback = localeResolutionCallback;
+    this.supportedLocales = supportedLocales;
+    this.debugShowMaterialGrid = debugShowMaterialGrid;
+    this.showPerformanceOverlay = showPerformanceOverlay;
+    this.checkerboardRasterCacheImages = checkerboardRasterCacheImages;
+    this.checkerboardOffscreenLayers = checkerboardOffscreenLayers;
+    this.showSemanticsDebugger = showSemanticsDebugger;
+    this.debugShowWidgetInspector = debugShowWidgetInspector;
+    this.debugShowCheckedModeBanner = debugShowCheckedModeBanner;
+    this.inspectorSelectButtonBuilder = inspectorSelectButtonBuilder;
+  }
 }

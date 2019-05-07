@@ -4,15 +4,15 @@ import 'package:flutter_arhitecture_helper/presentation/ui/base_app/base_app_con
 
 import 'splash/splash_screen.dart';
 
-var theme = ThemeData(
+var theme = new ThemeData(
   primarySwatch: Colors.blue,
 );
-var appCongig = BaseAppConfig(
+var appCongig = new BaseAppConfig(
     isMaterial: true,
     title: 'DipDev Studio',
     theme: theme,
     color: theme.primaryColor,
     home: new SplashScreen());
-var app = BaseApp(appCongig);
+var app = new BaseApp(appCongig);
 
 void main() => runApp(app);

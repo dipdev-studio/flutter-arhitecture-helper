@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 class BaseModelUtils {
+  List<Function(BuildContext context)> functionsWithContext = [];
+
   ViewCallbacks viewCallbacks = ViewCallbacks();
 
   BuildContext context;
@@ -36,6 +38,11 @@ class ViewCallbacks {
   Function _viewInitState;
   Function _viewDisposed;
 
+  Function _viewResumed;
+  Function _viewInactive;
+  Function _viewPaused;
+  Function _viewSuspending;
+
   void viewCreatedAction() {
     if (_viewCreated != null) {
       _viewCreated();
@@ -61,6 +68,30 @@ class ViewCallbacks {
     }
   }
 
+  void viewResumedAction() {
+    if (_viewResumed != null) {
+      _viewResumed();
+    }
+  }
+
+  void viewInactiveAction() {
+    if (_viewInactive != null) {
+      _viewInactive();
+    }
+  }
+
+  void viewPausedAction() {
+    if (_viewPaused != null) {
+      _viewPaused();
+    }
+  }
+
+  void viewSuspendingAction() {
+    if (_viewSuspending != null) {
+      _viewSuspending();
+    }
+  }
+
   void viewCreatedCallback(Function() fun) {
     _viewCreated = fun;
   }
@@ -75,5 +106,21 @@ class ViewCallbacks {
 
   void viewDisposedCallback(Function() fun) {
     _viewDisposed = fun;
+  }
+
+  void viewResumedCallback(Function() fun) {
+    _viewResumed = fun;
+  }
+
+  void viewInactiveCallback(Function() fun) {
+    _viewInactive = fun;
+  }
+
+  void viewPausedCallback(Function() fun) {
+    _viewPaused = fun;
+  }
+
+  void viewSuspendingCallback(Function() fun) {
+    _viewSuspending = fun;
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
-import '../mvvm/stateless/base_view.dart';
+import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateless/base_view.dart';
 import 'base_app_model.dart';
 
 class BaseAppView extends BaseView<BaseAppModel> {

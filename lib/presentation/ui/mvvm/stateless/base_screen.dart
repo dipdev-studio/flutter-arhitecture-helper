@@ -26,4 +26,8 @@ abstract class BaseScreen<M extends BaseModel, V extends BaseView<M>,
 
   V initView(M model);
   VM initViewModel(V view);
+
+  void addFunctionWithRunOnContext(Function(BuildContext context) fun) {
+    model.functionsWithContext.add(fun);
+  }
 }

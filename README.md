@@ -12,21 +12,26 @@ To use this package, add `flutter_arhitecture_helper` as a [dependency in your p
 
 ```yaml
 dependencies:
-  flutter_arhitecture_helper: ^0.3.9
+  flutter_arhitecture_helper: ^0.4.1
 ```
-
 
 ### Example
 
 #### Main function
 
 ```dart
-void main() => runApp(BaseApp.materialApp(
+var theme = new ThemeData(
+  primarySwatch: Colors.blue,
+);
+var appCongig = new BaseAppConfig(
+    isMaterial: true,
     title: 'DipDev Studio',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
-    home: new SplashScreen()));
+    theme: theme,
+    color: theme.primaryColor,
+    home: new SplashScreen());
+var app = new BaseApp(appCongig);
+
+void main() => runApp(app);
 ```
 
 #### Navigate in View Model
@@ -64,6 +69,18 @@ void initState() {}
 
 @override
 void viewDisposed() {}
+
+@override
+void viewResumed() {}
+
+@override
+void viewInactive() {}
+
+@override
+void viewPaused() {}
+
+@override
+void viewSuspending() {}
 ```
 
 

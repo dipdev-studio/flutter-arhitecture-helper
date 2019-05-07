@@ -19,5 +19,6 @@ abstract class BaseView<M extends BaseModel> extends StatelessWidget
     return view;
   }
 
+  /// This method needs to be implemented to provide the Widget for display.
   Widget getView(BuildContext context);
 }

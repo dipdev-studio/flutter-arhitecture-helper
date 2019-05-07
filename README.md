@@ -69,6 +69,18 @@ void initState() {}
 
 @override
 void viewDisposed() {}
+
+@override
+void viewResumed() {}
+
+@override
+void viewInactive() {}
+
+@override
+void viewPaused() {}
+
+@override
+void viewSuspending() {}
 ```
 
 

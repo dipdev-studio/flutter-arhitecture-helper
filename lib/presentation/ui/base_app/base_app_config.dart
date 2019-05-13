@@ -35,7 +35,7 @@ class BaseAppConfig {
   InspectorSelectButtonBuilder inspectorSelectButtonBuilder;
 
   BaseAppConfig({
-    @required bool isMaterial = true,
+    @required bool isMaterial,
     Key key,
     GlobalKey<NavigatorState> navigatorKey,
     Widget home,

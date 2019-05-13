@@ -10,10 +10,13 @@ class BaseViewModelUtils<M extends BaseModelUtils, V extends BaseViewUtils<M>> {
   M get modelUtils => _model;
 
   BaseViewModelUtils(this._view, this._model) {
+    initSync();
     init();
   }
 
-  void init() {}
+  void initSync() {}
+
+  void init() async {}
 
   runWithContext<T>(Function(BuildContext context) fun) {
     modelUtils.functionsWithContext.add(fun);

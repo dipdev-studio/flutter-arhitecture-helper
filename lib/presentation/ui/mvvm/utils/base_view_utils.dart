@@ -8,14 +8,14 @@ import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/utils/base_model
 class BaseViewUtils<M extends BaseModelUtils> {
   Future<T> navigateTo<T extends Object>(
       BuildContext context, Widget widget, bool clear,
-      {bool material = true}) {
+      {bool material = true}) async {
     if (clear) {
-      return Navigator.pushAndRemoveUntil(
+      return await Navigator.pushAndRemoveUntil(
           context,
           getPageRoute(widget, material: material),
           (Route<dynamic> route) => false);
     } else {
-      return Navigator.push(
+      return await Navigator.push(
         context,
         getPageRoute(widget, material: material),
       );

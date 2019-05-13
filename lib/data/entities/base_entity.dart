@@ -33,10 +33,6 @@ abstract class BaseEntity {
     }
   }
 
-  dynamic _getValue(dynamic value) {
-    return _getValueByType(value.runtimeType, _getValueByType);
-  }
-
   dynamic _getValueByType(Type type, dynamic value) {
     String valueString = value.toString();
     if (type is String)

@@ -13,16 +13,19 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>>
   /// Getting the model in MVVM
   M get model => modelUtils as M;
 
-  /// Callback event during screen start
-  void init() {
+  void initSync() {
     model.viewCallbacks.viewCreatedCallback(viewCreated);
-    model.viewCallbacks.viewRefreshCallback(viewRefresh);
     model.viewCallbacks.viewInitStateCallback(initState);
     model.viewCallbacks.viewDisposedCallback(viewDisposed);
     model.viewCallbacks.viewResumedCallback(viewResumed);
     model.viewCallbacks.viewInactiveCallback(viewInactive);
     model.viewCallbacks.viewPausedCallback(viewPaused);
     model.viewCallbacks.viewSuspendingCallback(viewSuspending);
+  }
+
+  /// Callback event during screen start
+  void init() async {
+    model.viewCallbacks.viewRefreshCallback(viewRefresh);
     model.loadingShow.addCallback(loadingShow);
     model.loadingHide.addCallback(loadingHide);
   }

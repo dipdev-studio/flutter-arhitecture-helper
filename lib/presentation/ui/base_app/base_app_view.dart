@@ -13,7 +13,7 @@ class BaseAppView extends BaseView<BaseAppModel> {
     return getAppWidget();
   }
 
-  Widget getAppWidget() { 
+  Widget getAppWidget() {
     if (model.appConfig.isMaterial) {
       return MaterialApp(
           key: model.appConfig.key,

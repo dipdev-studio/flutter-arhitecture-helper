@@ -6,7 +6,6 @@ import 'base_app_view.dart';
 import 'base_app_view_model.dart';
 
 class BaseApp extends BaseScreen<BaseAppModel, BaseAppView, BaseAppViewModel> {
-
   BaseApp(BaseAppConfig appConfig) : super(new BaseAppModel(appConfig));
 
   @override

@@ -1,4 +1,3 @@
-
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 

@@ -1,5 +1,9 @@
 # File with heading
 
+## [0.4.2] - 13.05.2019
+
+* Added async to init methods
+
 ## [0.4.0, 0.4.1] - 07.05.2019
 
 * Implement BaseApp as MVVM

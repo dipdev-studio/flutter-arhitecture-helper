@@ -12,7 +12,7 @@ class BaseModel with BaseModelUtils {
 
   /// The method is responsible for displaying the loading indicator.
   OnCallCommand loadingShow = new OnCallCommand();
-  
+
   /// The method is responsible for displaying the loading indicator.
   OnCallCommand loadingHide = new OnCallCommand();
 }

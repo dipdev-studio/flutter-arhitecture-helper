@@ -7,12 +7,14 @@ import 'splash/splash_screen.dart';
 var theme = new ThemeData(
   primarySwatch: Colors.blue,
 );
-var appCongig = new BaseAppConfig(
+var appConfig = new BaseAppConfig(
     isMaterial: true,
     title: 'DipDev Studio',
     theme: theme,
     color: theme.primaryColor,
-    home: new SplashScreen());
-var app = new BaseApp(appCongig);
+    home: new SplashScreen(),
+    showPerformanceOverlay: true,
+    debugShowCheckedModeBanner: true);
+var app = new BaseApp(appConfig);
 
 void main() => runApp(app);

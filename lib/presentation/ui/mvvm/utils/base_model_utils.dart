@@ -11,23 +11,23 @@ class BaseModelUtils {
 class OnCallCommand {
   List<Function> callbacks = new List();
 
-  void addCallbackObject<T>(Function(T value) fun) {
+  void addCallbackObject<T>(Function(T value) fun) async {
     callbacks.add(fun);
   }
 
-  void addCallback(Function() fun) {
+  void addCallback(Function() fun) async {
     callbacks.add(fun);
   }
 
-  void clearCallbacks() {
+  void clearCallbacks() async {
     callbacks.clear();
   }
 
-  void onCallWithValue<T>(T value) {
+  void onCallWithValue<T>(T value) async {
     callbacks.forEach((fun) => fun(value));
   }
 
-  void onCall() {
+  void onCall() async {
     callbacks.forEach((fun) => fun());
   }
 }

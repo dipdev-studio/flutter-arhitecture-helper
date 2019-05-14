@@ -1,4 +1,3 @@
-
 import 'package:flutter_arhitecture_helper/presentation/ui/mvvm/stateful/base_screen.dart';
 
 import 'splash_screen_model.dart';

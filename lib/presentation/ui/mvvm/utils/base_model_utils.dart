@@ -19,6 +19,11 @@ class OnCallCommand {
     callbacks.add(fun);
   }
 
+  void setCallbackObject<T>(Function(T value) fun) async {
+    callbacks.clear();
+    callbacks.add(fun);
+  }
+
   void setCallback(Function() fun) async {
     callbacks.clear();
     callbacks.add(fun);

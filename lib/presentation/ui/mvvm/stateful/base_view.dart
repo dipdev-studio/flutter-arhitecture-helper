@@ -17,6 +17,7 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     Widget widget = Directionality(
         textDirection: TextDirection.ltr,
         child: new Stack(

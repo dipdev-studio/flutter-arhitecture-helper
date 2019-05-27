@@ -15,6 +15,7 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>>
 
   /// Callback event during screen start
   void init() {
+    model.viewCallbacks.clearAllCallbacks();
     model.viewCallbacks.viewCreatedCallback(viewCreated);
   }
 

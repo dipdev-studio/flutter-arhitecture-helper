@@ -1,5 +1,13 @@
 # File with heading
 
+## [0.4.3] - 27.05.2019
+
+* Fix the many runs callbacks.
+You can use:
+- OnCallCommand.setCallback() - the list of calbacks is cleared
+or
+- OnCallCommand.addCallback() - add to list calbacks
+
 ## [0.4.2] - 13.05.2019
 
 * Added async to init methods

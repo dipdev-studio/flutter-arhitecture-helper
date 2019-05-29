@@ -19,8 +19,14 @@ class OnCallCommand {
     callbacks.add(fun);
   }
 
-  void clearCallbacks() async {
+  void setCallbackObject<T>(Function(T value) fun) async {
     callbacks.clear();
+    callbacks.add(fun);
+  }
+
+  void setCallback(Function() fun) async {
+    callbacks.clear();
+    callbacks.add(fun);
   }
 
   void onCallWithValue<T>(T value) async {
@@ -29,6 +35,10 @@ class OnCallCommand {
 
   void onCall() async {
     callbacks.forEach((fun) => fun());
+  }
+
+  void clearAllCallbacks() async {
+    callbacks.clear();
   }
 }
 
@@ -122,5 +132,16 @@ class ViewCallbacks {
 
   void viewSuspendingCallback(Function() fun) {
     _viewSuspending = fun;
+  }
+
+  void clearAllCallbacks() {
+    _viewCreated = null;
+    _viewRefresh = null;
+    _viewInitState = null;
+    _viewDisposed = null;
+    _viewResumed = null;
+    _viewInactive = null;
+    _viewPaused = null;
+    _viewSuspending = null;
   }
 }

@@ -14,6 +14,7 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>>
   M get model => modelUtils as M;
 
   void initSync() {
+    model.viewCallbacks.clearAllCallbacks();
     model.viewCallbacks.viewCreatedCallback(viewCreated);
     model.viewCallbacks.viewInitStateCallback(initState);
     model.viewCallbacks.viewDisposedCallback(viewDisposed);
@@ -26,8 +27,8 @@ abstract class BaseViewModel<M extends BaseModel, V extends BaseView<M>>
   /// Callback event during screen start
   void init() async {
     model.viewCallbacks.viewRefreshCallback(viewRefresh);
-    model.loadingShow.addCallback(loadingShow);
-    model.loadingHide.addCallback(loadingHide);
+    model.loadingShow.setCallback(loadingShow);
+    model.loadingHide.setCallback(loadingHide);
   }
 
   /// Event callback when the view already created.

@@ -10,4 +10,10 @@ class Validators {
       {bool containNumber = false, bool containUppercaseCharacter = false}) {
     return password.length > minLength;
   }
+
+  static bool isPhoneValid(String phone) {
+    Pattern pattern = r'^(?:[+0]9)?[0-9]{10}$';
+    RegExp regex = new RegExp(pattern);
+    return !regex.hasMatch(phone);
+  }
 }

@@ -70,6 +70,6 @@ abstract class BaseView<M extends BaseModel> extends State<StatefulWidget>
   bool get wantKeepAlive => keepAlive;
 
   Widget getLoadingWidget() {
-    return new LoadingWidget(showing: model.loading);
+    return new LoadingWidget.android(showing: model.loading);
   }
 }
